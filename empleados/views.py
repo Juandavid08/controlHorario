@@ -6,4 +6,5 @@ from .models import empleados
 class EmpleadoView(viewsets.ModelViewSet):
     serializer_class = empleadosSerializer
     queryset = empleados.objects.all()
+
    

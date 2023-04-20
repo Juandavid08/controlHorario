@@ -1,10 +1,10 @@
 from django.urls import path, include
 from rest_framework import routers
-from empleados import views
+from proovedores import views
 
 # API
 router = routers.DefaultRouter()
-router.register(r'empleados', views.EmpleadoView, 'empleados')
+router.register(r'proovedores', views.ProovedorView, 'proovedores')
 
 urlpatterns = [
     path("api/v1/", include(router.urls))

@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from .models import empleados, proovedor
+from .models import empleados
 
 class empleadosSerializer(serializers.ModelSerializer):
     class Meta:
         model = empleados
-        model2 = proovedor
         #fields = ('id', 'nombre', 'identidad')
         fields = '__all__'
