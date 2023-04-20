@@ -1,16 +1,25 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { getAllEmpleados } from "../api/empleado.api"
+import { EmpleadoCard } from "./EmpleadoCard";
 
 export function EmpleadosList() {
 
+    const [empleados, setEmpleados] = useState([]);
+    let fecha = new Date();
+    let dia = fecha.getDate
+
     useEffect(() => {
-        function loadEmpleados() {
-            const res = getAllEmpleados();
-            console.log(res);
+        async function loadEmpleados() {
+            const res = await getAllEmpleados();
+            setEmpleados(res.data);
         }
         loadEmpleados();
     }, [])
 
-    return <div>EmpleadosList</div>
+    return <div>
+        {empleados.map((empleado) => (
+            <EmpleadoCard key={empleado.id} empleado={empleado}/>
+        ))}
+    </div>
 
 }
