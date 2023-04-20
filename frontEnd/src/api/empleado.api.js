@@ -6,4 +6,10 @@ const empleadoApi = axios.create({
 
 export const getAllEmpleados = () => empleadoApi.get('/');
 
+export const getEmpleado = (id) => empleadoApi.get(`/${id}/`);
+
 export const newEmpleado = (empleado) => empleadoApi.post('/', empleado);
+
+export const deleteEmpleado = (id) => empleadoApi.delete(`/${id}`);
+
+export const updateEmpleado = (id, empleado) => empleadoApi.put(`/${id}/`, empleado);
