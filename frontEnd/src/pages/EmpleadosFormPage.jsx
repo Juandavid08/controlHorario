@@ -10,7 +10,6 @@ export function EmpleadosFormPage() {
     moment.tz.setDefault('America/Bogota');
 
     const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm();
-
     const navigate = useNavigate();
     const params = useParams();
 
@@ -53,7 +52,7 @@ export function EmpleadosFormPage() {
     }, [])
     return (
         <div className='max-w-xl mx-auto'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="bg-zinc-800 p-10 rounded-lg mt-2">
                 <input className='bg-zinc-700 p-3 rounded-lg block w-full mb-3' type="text" placeholder="Ingresa el nombre del empleado"  {...register("nombre", { required: true })} />
                 <input className='bg-zinc-700 p-3 rounded-lg block w-full mb-3' type="datetime-local" id="entrada" max={new Date().toISOString()} placeholder="Ingresa la hora de entrada"   {...register("entrada", { required: true })} />
                 <input className='bg-zinc-700 p-3 rounded-lg block w-full mb-3' type="datetime-local" id="salida" max={new Date().toISOString()} min={entrada} placeholder="Ingresa la hora de salida"   {...register("salida", { required: true })} />

@@ -15,10 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to='/empleados' />} />
           <Route path="/empleados" element={<EmpleadosPage />} />
-          <Route path="/Proovedores" element={<ProovedoresPage />} />
+          <Route path="/proovedores" element={<ProovedoresPage />} />
           <Route path="/RegistrarEmpleado" element={<EmpleadosFormPage />} />
-          <Route path="/nuevo-proovedor" element={<ProovedoresFormPage />} />
+          <Route path="/RegistrarProovedor" element={<ProovedoresFormPage />} />
           <Route path="/empleado/:id" element={<EmpleadosFormPage />} />
+          <Route path="/proovedor/:id" element={<ProovedoresFormPage />} />
         </Routes>
         <Toaster />
       </div>
